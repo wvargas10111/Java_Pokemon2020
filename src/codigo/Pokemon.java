@@ -12,9 +12,11 @@ package codigo;
 public class Pokemon {
     
     public String nombre ="";
-    public String especie ="";
-    public String movimiento1 ="";
-    public String peso = "";
-    public String  preEvolucion ="";
-    public String  postEvolucion ="";
+    public String altura ="";
+    public String peso ="";
+    public String tipo1 ="";
+    public String tipo2 ="";
+    public String habilidad ="";
+    
+    
 }
