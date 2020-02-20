@@ -14,7 +14,7 @@ public class Pokemon {
     public String nombre ="";
     public String especie ="";
     public String movimiento1 ="";
-    public double peso = 0.0;
-    public int  preEvolucion =0;
-    public int  postEvolucion =0;
+    public String peso = "";
+    public String  preEvolucion ="";
+    public String  postEvolucion ="";
 }

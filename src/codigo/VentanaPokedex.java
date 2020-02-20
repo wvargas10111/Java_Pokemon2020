@@ -31,7 +31,9 @@ public final class VentanaPokedex extends javax.swing.JFrame {
     
     //estructura para guardar todo el contenido de la BBDD de golpe y reutilizarla
     HashMap<String, Pokemon>listaPokemons = new HashMap();
-
+    
+    
+    
     @Override
     public void paint(Graphics g) {
         super.paintComponents(g);
@@ -79,9 +81,9 @@ public final class VentanaPokedex extends javax.swing.JFrame {
                 p.nombre=resultadoConsulta.getString("nombre");
                 p.especie=resultadoConsulta.getString("especie");
                 p.movimiento1=resultadoConsulta.getString("movimiento1");
-                p.peso=resultadoConsulta.getDouble("peso");
-                p.preEvolucion=resultadoConsulta.getInt("preEvolucion");
-                p.postEvolucion=resultadoConsulta.getInt("postEvolucion");
+                p.peso=resultadoConsulta.getString("peso");
+                p.preEvolucion=resultadoConsulta.getString("preEvolucion");
+                p.postEvolucion=resultadoConsulta.getString("postEvolucion");
                 
                 //Añado el pokemon recien creado al Hashmap.
                 listaPokemons.put(resultadoConsulta.getString("id"), p);
@@ -214,22 +216,24 @@ public final class VentanaPokedex extends javax.swing.JFrame {
 
     private void derActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_derActionPerformed
         
-        dibujaElPokemonQueEstaEnLaPosicion(contador);
+        
        
          contador ++;
-         if (contador >=649){
-             contador = 649;
-         }
-         
-         
-        Pokemon p =listaPokemons.get(String.valueOf(contador+1));
-        if (p!= null) {
-            nombrePokemon.setText(p.nombre);
-            
-        }else{
-            nombrePokemon.setText("No hay datos");
+         if (contador >=150){
+            contador = 150;
         }
-        
+        Pokemon p = listaPokemons.get(String.valueOf(contador + 1));
+        if (p != null) {
+            nombrePokemon.setText(p.nombre);
+            especie.setText(" Especie del pokemon: " + p.especie);
+            movimiento1.setText(" Altura: " + p.movimiento1);
+            peso.setText(" Peso: " + p.peso);
+            preEvolucion.setText(" Pre-evolucion: " + p.preEvolucion);
+            postEvolucion.setText(" Evolucion: " + p.postEvolucion);
+
+            
+        }
+        dibujaElPokemonQueEstaEnLaPosicion(contador);
         
     }//GEN-LAST:event_derActionPerformed
     
